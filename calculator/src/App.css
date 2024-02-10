@@ -1,0 +1,27 @@
+.App{
+    height: 100vh;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
+    font-family: Lato, sans-serif;
+}
+.freeCodeCamp-logo-container{
+    width: 100%;
+    margin: 1.5em;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
+}
+.freeCodeCamp-logo{
+    height: 50px;
+}
+.calculator-container{
+    width: 400px;
+    height: 600px;
+    padding: 14px;
+    background-color: #99c9ff;
+    border-radius: 20px;
+    border: 5px solid white;
+}

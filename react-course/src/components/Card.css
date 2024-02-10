@@ -1,0 +1,17 @@
+
+.card {
+    width: 300px;
+    margin: 10px;
+    padding: 10px;
+    text-align: center;
+    border-radius: 20px;
+    background-color: bisque;
+    border: 4px solid lightsalmon;
+}
+
+.card h2{
+    color: yellowgreen;
+}
+.card p{
+    color: lightseagreen;
+}

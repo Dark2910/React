@@ -1,0 +1,22 @@
+.App{
+    padding-top: 15px;
+    font-family: Lato, sans-serif;
+    text-align: center;
+}
+
+.freeCodeCamp-logo-container{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 20px;
+}
+
+.freeCodeCamp-logo{
+    height: 50px;
+}
+
+.counter-container{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
