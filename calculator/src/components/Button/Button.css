@@ -1,0 +1,33 @@
+.btn{
+    flex: 1 1;
+    color: white;
+    background-color: #1B1B32;
+    margin: 0.25em;
+    padding: 0.50em;
+    border-radius: 1em;
+    border: 3px solid white;
+    text-align: center;
+    font-size: large;
+    font-weight: bold;
+}
+
+.btn:hover{
+    cursor: pointer;
+    background-color: #5a01a7;
+}
+
+.operator{
+    background-color: #00471b;
+}
+
+.operator:hover{
+    background-color: #ff6600;
+}
+
+.clear{
+    background-color: orange;
+}
+
+.clear:hover{
+    background-color: lightgray;
+}
