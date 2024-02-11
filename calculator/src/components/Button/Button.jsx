@@ -3,7 +3,7 @@ import PropTypes from 'prop-types';
 
 const Button = (props) => {
     const isOperator = (value) => {
-        return (isNaN(value) && (value != '.') && (value != '=') && (value != 'Clear'));
+        return (isNaN(value) && (value !== '.') && (value !== '=') && (value !== 'Clear'));
     }
     const isClear = (value) => {
         return (value === 'Clear');

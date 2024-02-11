@@ -17,16 +17,25 @@ function App() {
 
   const [input, setInput] = useState('');
 
+  const clearScreen = () => {
+    setInput('');
+  }
+  const result = () => {
+    if(input){
+      setInput(String(evaluate(input)));
+    }
+  }
+  const operation = (value) => {
+    setInput(String(input + value));
+  }
+
   const handleClick = (value) => {
-    if(value === 'Clear'){
-      setInput('');
+    const valueOptions = {
+      '=' : () => result(value),
+      'Clear': () => clearScreen(value),
     }
-    if(value === '='){
-      setInput(evaluate(input));
-    }
-    /* setInput(String(input + value)); */
-    /* setInput((prevInput) => String(prevInput + value)); */
-    setInput((prevInput) => (prevInput === 'Clear')? String(value) : String(prevInput + value));
+    const valueDefault = () => operation(value);
+    (valueOptions[value] || valueDefault)()
   }
 
   const grid = layout.map((row, rowIndex) => 
