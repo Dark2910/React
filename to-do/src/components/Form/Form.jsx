@@ -1,6 +1,6 @@
 import './Form.css';
 import { useState } from 'react';
-import PropTypes from 'prop-types'
+import PropTypes from 'prop-types';
 
 const Form = ({onFormSubmit}) =>{
     const[inputText, setInputText] = useState('');
@@ -29,11 +29,11 @@ const Form = ({onFormSubmit}) =>{
             <button type='submit' className='input-group-text bg-primary' id='to-do-from'>Add</button>
         </form>
     );
-}
+};
 
 Form.propTypes = {
     onFormSubmit: PropTypes.func.isRequired,
-}
+};
 
 
 export default Form;

@@ -18,12 +18,12 @@ const ToDo = () => {
             const updateToDos = [newToDo, ...toDos];
             setToDos(updateToDos);
         }
-    }
+    };
 
     const deleteToDo = (id) => {
         const updateToDos = toDos.filter((toDo) => toDo.id !== id);
         setToDos(updateToDos);
-    }
+    };
 
     const updateToDoStatus  = (id) => {
         const updateToDos = toDos.map((toDo) => {
@@ -33,7 +33,7 @@ const ToDo = () => {
             return toDo;
         })
         setToDos(updateToDos);
-    }
+    };
 
     const renderToDos = toDos.map((toDo) => {
         return(
@@ -46,7 +46,7 @@ const ToDo = () => {
                 handleClick={() => deleteToDo(toDo.id)}
             />
         );
-    })
+    });
     
     return(
         <div className='to-do-list container rounded-5 px-auto py-3 m-5'>
@@ -55,6 +55,6 @@ const ToDo = () => {
             <ToDoList toDos={renderToDos} />
         </div>
     );
-}
+};
 
 export default ToDo;

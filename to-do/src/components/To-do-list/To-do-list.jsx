@@ -7,7 +7,7 @@ const ToDoList = ({toDos}) => {
             {toDos}
         </div>
     );
-}
+};
 
 ToDoList.propTypes = {
     toDos: PropTypes.array.isRequired

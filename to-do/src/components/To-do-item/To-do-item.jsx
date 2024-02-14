@@ -1,23 +1,15 @@
 import './To-do-item.css';
 import PropTypes from 'prop-types';
 import { /* AiFillEdit, */ AiOutlineDelete   } from "react-icons/ai";
-import { useState, useEffect } from 'react';
+import { useState } from 'react';
 
 
 const ToDoItem = ({id, text, isFinished, updateToDoStatus, handleClick}) => {
     const [isChecked, setChecked] = useState(isFinished);
 
-    useEffect(() => {
-        setChecked(isFinished);
-    }, [isFinished])
-
     const handleCheckbox = () => {
-        setChecked((prevChecked) => {
-            updateToDoStatus();
-            console.log(`isFinished: ${isFinished} isChecked ${isChecked}`);
-            return !prevChecked;
-        });
-        
+        updateToDoStatus();
+        setChecked((prevIsFinished) => !prevIsFinished);
     };
 
     return (
@@ -38,14 +30,11 @@ const ToDoItem = ({id, text, isFinished, updateToDoStatus, handleClick}) => {
             </span>
         </div>
     );
-}
+};
 
 ToDoItem.propTypes = {
     id: PropTypes.string.isRequired,
-    text: PropTypes.oneOfType([
-        PropTypes.string,
-        PropTypes.number
-    ]).isRequired,
+    text: PropTypes.string.isRequired,
     isFinished: PropTypes.bool.isRequired,
     updateToDoStatus: PropTypes.func.isRequired,
     handleClick: PropTypes.func.isRequired,

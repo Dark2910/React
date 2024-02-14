@@ -1,5 +1,5 @@
-import freeCodeCampLogo from './img/freeCodeCamp-logo.png'
-import './Logo.css'
+import freeCodeCampLogo from './img/freeCodeCamp-logo.png';
+import './Logo.css';
 
 const Logo = () => {
     return(
@@ -7,6 +7,6 @@ const Logo = () => {
             <img className='img-fluid d-block mx-auto freeCodeCamp-logo' src={freeCodeCampLogo} alt='freeCodeCampLogo'/>
         </div>
     );
-}
+};
 
 export default Logo;
