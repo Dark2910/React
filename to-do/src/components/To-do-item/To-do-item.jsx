@@ -1,14 +1,23 @@
-import './To-do-item.css'
-import PropTypes from 'prop-types'
+import './To-do-item.css';
+import PropTypes from 'prop-types';
 import { /* AiFillEdit, */ AiOutlineDelete   } from "react-icons/ai";
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 
 
-const ToDoItem = ({text}) => {
-    const [isChecked, setChecked] = useState(false);
+const ToDoItem = ({id, text, isFinished, updateToDoStatus, handleClick}) => {
+    const [isChecked, setChecked] = useState(isFinished);
 
-    const handleCheckboxChange = () => {
-        setChecked(!isChecked);
+    useEffect(() => {
+        setChecked(isFinished);
+    }, [isFinished])
+
+    const handleCheckbox = () => {
+        setChecked((prevChecked) => {
+            updateToDoStatus();
+            console.log(`isFinished: ${isFinished} isChecked ${isChecked}`);
+            return !prevChecked;
+        });
+        
     };
 
     return (
@@ -17,23 +26,30 @@ const ToDoItem = ({text}) => {
                 <input
                     className='form-check-input m-0 mx-2'
                     type='checkbox'
-                    id='flexCheckDefault'
+                    id={id}
                     checked={isChecked}
-                    onChange={handleCheckboxChange}
+                    onChange={handleCheckbox}
                 />
-                <label className='form-check-label fs-5 m-0 me-2' htmlFor='flexCheckDefault'>{text}</label>
+                <label className='form-check-label fs-5 m-0 me-2' htmlFor={id}>{text}</label>
             </span>
             <span className='btn-container '>
                 {/* <button type='button' className='btn btn-warning fs-5 m-1 py-1'><AiFillEdit /></button> */}
-                <button type='button' className='btn btn-warning fs-5 m-1 py-1'><AiOutlineDelete /></button>
+                <button onClick={handleClick} type='button' className='btn btn-warning fs-5 m-1 py-1'><AiOutlineDelete /></button>
             </span>
         </div>
     );
 }
 
 ToDoItem.propTypes = {
-    text: PropTypes.string.isRequired,
-}
+    id: PropTypes.string.isRequired,
+    text: PropTypes.oneOfType([
+        PropTypes.string,
+        PropTypes.number
+    ]).isRequired,
+    isFinished: PropTypes.bool.isRequired,
+    updateToDoStatus: PropTypes.func.isRequired,
+    handleClick: PropTypes.func.isRequired,
+};
 
 export default ToDoItem;
 

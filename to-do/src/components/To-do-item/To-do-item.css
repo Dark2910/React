@@ -8,6 +8,10 @@
     text-decoration: line-through;
 }
 
+.form-check-container{
+    cursor: pointer;
+}
+
 .form-check-container input{
     cursor: pointer;
 }

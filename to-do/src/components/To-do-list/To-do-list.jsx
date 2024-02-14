@@ -1,23 +1,17 @@
-import './To-do-list.css'
-import ToDoItem from '../To-do-item/To-do-item';
+import './To-do-list.css';
+import PropTypes from 'prop-types';
 
-const ToDoList = () => {
-
-/*     const renderToDoItems = toDo.map((_,index) => (
-        <ToDoItem key={index} text={'Hello'}/>
-    )); */
-    const renderList = [
-        <ToDoItem key={1} text={'Hello'}/>,
-        <ToDoItem key={2} text={'Hello'}/>,
-        <ToDoItem key={3} text={'Hello'}/>,
-        <ToDoItem key={4} text={'Hello'}/>,
-    ];
-    
+const ToDoList = ({toDos}) => {    
     return(
         <div className='container d-flex flex-column flex-wrap align-items-center justify-content-center'>
-            {renderList}
+            {toDos}
         </div>
     );
 }
+
+ToDoList.propTypes = {
+    toDos: PropTypes.array.isRequired
+};
+
 
 export default ToDoList;
