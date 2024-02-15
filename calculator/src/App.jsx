@@ -1,5 +1,4 @@
 import './App.css';
-import freeCodeCampLogo from './images/freeCodeCamp-logo.png'
 import Screen from './components/Screen/Screen';
 import Button from './components/Button/Button';
 import { useState } from 'react';
@@ -46,9 +45,6 @@ function App() {
 
   return (
     <div className='App'>
-      <div className='freeCodeCamp-logo-container'>
-        <img className='freeCodeCamp-logo' src={freeCodeCampLogo} alt="logo freeCodeCamp" />
-      </div>
       <div className='calculator-container'>
         <Screen input={input}/>
         {grid}
